@@ -1,0 +1,13 @@
+{
+  "name": "doorstep",
+  "version": "0.1.0",
+  "description": "A barebones SCSS framework for small web projects.",
+  "license": "MIT",
+  "scripts": {
+    "build": "sass example/style.scss example/style.css",
+    "watch": "sass --watch example/style.scss example/style.css"
+  },
+  "devDependencies": {
+    "sass": "^1.77.0"
+  }
+}

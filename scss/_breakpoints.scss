@@ -1,0 +1,31 @@
+// -----------------------------------------------------------------------------
+// Breakpoints
+// -----------------------------------------------------------------------------
+// SCSS map (compile-time) because media queries can't use CSS vars.
+// Usage:
+//   @use "doorstep/scss/breakpoints" as bp;
+//   .card { @include bp.up(md) { padding: var(--space-lg); } }
+// -----------------------------------------------------------------------------
+
+$breakpoints: (
+  sm: 480px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+) !default;
+
+@mixin up($name) {
+  $value: map-get($breakpoints, $name);
+  @if $value == null {
+    @error "Unknown breakpoint `#{$name}`. Known: #{map-keys($breakpoints)}.";
+  }
+  @media (min-width: #{$value}) { @content; }
+}
+
+@mixin down($name) {
+  $value: map-get($breakpoints, $name);
+  @if $value == null {
+    @error "Unknown breakpoint `#{$name}`. Known: #{map-keys($breakpoints)}.";
+  }
+  @media (max-width: #{$value - 1px}) { @content; }
+}

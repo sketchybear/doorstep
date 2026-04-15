@@ -1,0 +1,125 @@
+// -----------------------------------------------------------------------------
+// Forms
+// -----------------------------------------------------------------------------
+// Styles native form elements directly. No `.btn` / `.input` classes required.
+// -----------------------------------------------------------------------------
+
+label {
+  display: inline-block;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-fg);
+  margin-block-end: var(--space-xs);
+}
+
+input,
+textarea,
+select {
+  display: block;
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--text-base);
+  color: var(--color-fg);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+
+  &::placeholder { color: var(--color-muted); }
+
+  &:hover { border-color: var(--color-muted); }
+
+  &:focus-visible {
+    outline: none;
+    border-color: var(--color-focus);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-focus) 25%, transparent);
+  }
+
+  &:disabled {
+    background-color: var(--color-subtle);
+    color: var(--color-muted);
+    cursor: not-allowed;
+  }
+}
+
+textarea {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+// Checkbox & radio — keep native but give them breathing room
+input[type="checkbox"],
+input[type="radio"] {
+  display: inline-block;
+  width: auto;
+  margin-inline-end: var(--space-xs);
+  accent-color: var(--color-accent);
+}
+
+// Form field wrapper convention: <div class="field"> is optional
+.field {
+  margin-block-end: var(--space-md);
+}
+
+// --- Buttons ----------------------------------------------------------------
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--text-base);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-accent-fg);
+  background-color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: filter 120ms ease, box-shadow 120ms ease;
+
+  &:hover { filter: brightness(1.08); }
+  &:active { filter: brightness(0.95); }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-focus) 35%, transparent);
+  }
+
+  &:disabled {
+    background-color: var(--color-subtle);
+    color: var(--color-muted);
+    border-color: var(--color-border);
+    cursor: not-allowed;
+    filter: none;
+  }
+}
+
+// Secondary / ghost button — opt-in via [data-variant]
+button[data-variant="secondary"] {
+  color: var(--color-fg);
+  background-color: var(--color-subtle);
+  border-color: var(--color-border);
+}
+
+button[data-variant="ghost"] {
+  color: var(--color-fg);
+  background-color: transparent;
+  border-color: transparent;
+
+  &:hover { background-color: var(--color-subtle); }
+}
+
+fieldset {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  margin-block-end: var(--space-md);
+}
+
+legend {
+  padding-inline: var(--space-sm);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-muted);
+}

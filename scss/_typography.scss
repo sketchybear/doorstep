@@ -1,0 +1,93 @@
+// -----------------------------------------------------------------------------
+// Typography
+// -----------------------------------------------------------------------------
+// Styles base elements directly. No utility classes — override via tokens.
+// -----------------------------------------------------------------------------
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-base);
+  color: var(--color-fg);
+  background-color: var(--color-bg);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: var(--leading-tight);
+  font-weight: 600;
+  color: var(--color-fg);
+}
+
+h1 { font-size: var(--text-3xl); margin-block-end: var(--space-lg); }
+h2 { font-size: var(--text-2xl); margin-block-end: var(--space-md); }
+h3 { font-size: var(--text-xl);  margin-block-end: var(--space-md); }
+h4 { font-size: var(--text-lg);  margin-block-end: var(--space-sm); }
+h5 { font-size: var(--text-md);  margin-block-end: var(--space-sm); }
+h6 { font-size: var(--text-base); margin-block-end: var(--space-sm); }
+
+p {
+  max-width: var(--measure);
+  margin-block-end: var(--space-md);
+}
+
+small { font-size: var(--text-sm); color: var(--color-muted); }
+
+a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+
+  &:hover { text-decoration: none; }
+  &:focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+}
+
+strong, b { font-weight: 600; }
+em, i     { font-style: italic; }
+
+code, kbd, samp, pre {
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+}
+
+code {
+  background: var(--color-subtle);
+  padding: 0.1em 0.35em;
+  border-radius: var(--radius-sm);
+}
+
+pre {
+  background: var(--color-subtle);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  margin-block-end: var(--space-md);
+
+  code {
+    background: none;
+    padding: 0;
+  }
+}
+
+blockquote {
+  border-inline-start: 3px solid var(--color-border);
+  padding-inline-start: var(--space-md);
+  color: var(--color-muted);
+  margin-block-end: var(--space-md);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin-block: var(--space-xl);
+}
+
+ul, ol {
+  padding-inline-start: var(--space-lg);
+  margin-block-end: var(--space-md);
+}
+
+li + li { margin-block-start: var(--space-xs); }

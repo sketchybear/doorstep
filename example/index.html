@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Doorstep — demo</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main style="max-width: 65ch; margin: 2rem auto; padding: 0 1rem;">
+    <h1>Doorstep</h1>
+    <p>A barebones SCSS framework. This page exists so you can eyeball every base element while you tweak tokens.</p>
+
+    <h2>Typography</h2>
+    <h3>Heading three</h3>
+    <h4>Heading four</h4>
+    <p>Regular paragraph with a <a href="#">link</a>, some <strong>strong text</strong>, <em>emphasis</em>, and <code>inline code</code>.</p>
+    <blockquote>A short blockquote to check border and muted colour.</blockquote>
+    <pre><code>const hello = "world";</code></pre>
+    <ul>
+      <li>Unordered item one</li>
+      <li>Unordered item two</li>
+    </ul>
+
+    <hr />
+
+    <h2>Forms</h2>
+    <form onsubmit="event.preventDefault()">
+      <div class="field">
+        <label for="name">Name</label>
+        <input id="name" type="text" placeholder="Jane Doe" />
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="jane@example.com" />
+      </div>
+
+      <div class="field">
+        <label for="bio">Bio</label>
+        <textarea id="bio" placeholder="A few sentences..."></textarea>
+      </div>
+
+      <div class="field">
+        <label for="role">Role</label>
+        <select id="role">
+          <option>Designer</option>
+          <option>Engineer</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <fieldset>
+        <legend>Preferences</legend>
+        <label><input type="checkbox" /> Subscribe to newsletter</label><br />
+        <label><input type="radio" name="plan" /> Free</label>
+        <label><input type="radio" name="plan" /> Pro</label>
+      </fieldset>
+
+      <button type="submit">Primary</button>
+      <button type="button" data-variant="secondary">Secondary</button>
+      <button type="button" data-variant="ghost">Ghost</button>
+      <button type="button" disabled>Disabled</button>
+    </form>
+  </main>
+</body>
+</html>

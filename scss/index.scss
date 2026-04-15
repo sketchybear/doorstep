@@ -1,0 +1,14 @@
+// -----------------------------------------------------------------------------
+// Doorstep — barebones SCSS framework
+// -----------------------------------------------------------------------------
+// Single entry point. Import this once; override tokens afterwards.
+//
+// Usage (in your project's main.scss):
+//   @use "doorstep/scss";
+//   :root { --color-accent: hotpink; }
+// -----------------------------------------------------------------------------
+
+@forward "tokens";
+@forward "reset";
+@forward "typography";
+@forward "forms";

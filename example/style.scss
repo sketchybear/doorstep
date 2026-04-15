@@ -1,0 +1,10 @@
+// Example consumer stylesheet.
+// Compile with: sass example/style.scss example/style.css
+
+@use "../scss";
+
+// Example of overriding a token — uncomment to try it:
+// :root {
+//   --color-accent: #ff5a8a;
+//   --font-sans: "Inter", system-ui, sans-serif;
+// }

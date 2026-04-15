@@ -1,0 +1,74 @@
+// -----------------------------------------------------------------------------
+// Tokens
+// -----------------------------------------------------------------------------
+// All defaults live here as CSS custom properties. To customise the framework,
+// redeclare any of these in your own stylesheet *after* importing Doorstep.
+//
+// Example:
+//   @use "doorstep";
+//   :root { --color-accent: hotpink; --font-sans: "Inter", sans-serif; }
+// -----------------------------------------------------------------------------
+
+:root {
+  // --- Typography ----------------------------------------------------------
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  // Type scale (t-shirt sizing)
+  --text-xs:   0.75rem;   // 12px
+  --text-sm:   0.875rem;  // 14px
+  --text-base: 1rem;      // 16px
+  --text-md:   1.125rem;  // 18px
+  --text-lg:   1.25rem;   // 20px
+  --text-xl:   1.5rem;    // 24px
+  --text-2xl:  2rem;      // 32px
+  --text-3xl:  2.5rem;    // 40px
+
+  --leading-tight: 1.2;
+  --leading-base:  1.5;
+  --leading-loose: 1.75;
+
+  --measure: 65ch; // max line length for prose
+
+  // --- Spacing (t-shirt) ---------------------------------------------------
+  --space-xs: 0.25rem;  //  4px
+  --space-sm: 0.5rem;   //  8px
+  --space-md: 1rem;     // 16px
+  --space-lg: 1.5rem;   // 24px
+  --space-xl: 2rem;     // 32px
+  --space-2xl: 3rem;    // 48px
+  --space-3xl: 4rem;    // 64px
+
+  // --- Radii ---------------------------------------------------------------
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+
+  // --- Colors (semantic, light theme) --------------------------------------
+  --color-bg:      #ffffff;
+  --color-fg:      #111418;
+  --color-muted:   #5a6572;
+  --color-subtle:  #f4f5f7;
+  --color-border:  #d9dde2;
+  --color-accent:  #3558ff;
+  --color-accent-fg: #ffffff;
+  --color-danger:  #d6334a;
+  --color-success: #1f9d55;
+  --color-focus:   var(--color-accent);
+}
+
+// --- Dark mode (auto via prefers-color-scheme) -------------------------------
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg:      #0e1116;
+    --color-fg:      #e6e8eb;
+    --color-muted:   #9098a4;
+    --color-subtle:  #161b22;
+    --color-border:  #2a313a;
+    --color-accent:  #7a90ff;
+    --color-accent-fg: #0e1116;
+    --color-danger:  #ff6b7f;
+    --color-success: #4fd28a;
+  }
+}
