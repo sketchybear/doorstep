@@ -7,6 +7,8 @@
 //   .card { @include bp.up(md) { padding: var(--space-lg); } }
 // -----------------------------------------------------------------------------
 
+@use "sass:map";
+
 $breakpoints: (
   sm: 480px,
   md: 768px,
@@ -15,17 +17,17 @@ $breakpoints: (
 ) !default;
 
 @mixin up($name) {
-  $value: map-get($breakpoints, $name);
+  $value: map.get($breakpoints, $name);
   @if $value == null {
-    @error "Unknown breakpoint `#{$name}`. Known: #{map-keys($breakpoints)}.";
+    @error "Unknown breakpoint `#{$name}`. Known: #{map.keys($breakpoints)}.";
   }
   @media (min-width: #{$value}) { @content; }
 }
 
 @mixin down($name) {
-  $value: map-get($breakpoints, $name);
+  $value: map.get($breakpoints, $name);
   @if $value == null {
-    @error "Unknown breakpoint `#{$name}`. Known: #{map-keys($breakpoints)}.";
+    @error "Unknown breakpoint `#{$name}`. Known: #{map.keys($breakpoints)}.";
   }
   @media (max-width: #{$value - 1px}) { @content; }
 }
